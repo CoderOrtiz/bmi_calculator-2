@@ -1,13 +1,13 @@
 
 
-    user = prompt("Whats your name?");
-    friend = prompt("Whats your friend's name?");
+    // user = prompt("Whats your name?");
+    // friend = prompt("Whats your friend's name?");
 
-    usersMass = prompt("Whats your weight in pounds?");
-    usersHeight = prompt("Whats your height in inches?");
+    // usersMass = prompt("Whats your weight in pounds?");
+    // usersHeight = prompt("Whats your height in inches?");
 
-    friendsMass = prompt("Whats your friend's weight in pounds?");
-    friendsHeight = prompt("Whats your friend's height in inches?");
+    // friendsMass = prompt("Whats your friend's weight in pounds?");
+    // friendsHeight = prompt("Whats your friend's height in inches?");
 
     const theMan = {
         you: user,
