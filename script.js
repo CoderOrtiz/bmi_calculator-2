@@ -24,7 +24,7 @@ const user = {
             document.querySelector('.users_status').textContent = 'You are overweight.';
         }
         else if (this.userBMI > 31) {
-            document.querySelector('.your_friends_status').textContent = `${this.you}'s obese.`;
+            document.querySelector('.users_status').textContent = `${this.you}'s obese.`;
         }
         else {    
         }
