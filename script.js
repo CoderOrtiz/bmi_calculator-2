@@ -54,7 +54,6 @@ const yourFriend = {
             document.querySelector('.your_friends_status').textContent = `${this.user}'s at a healthy weight.`;
         }
         else if ((this.companionsBMIRounded >= 26) && (this.companionsBMIRounded <= 30)) {
-            console.log(this.companionsBMIRounded)
             document.querySelector('.your_friends_status').textContent = `${this.user}'s overweight.`;
         }
         else if (this.companionsBMIRounded > 31) {
