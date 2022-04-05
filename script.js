@@ -23,8 +23,10 @@ const user = {
         else if ((this.userBMI >= 26) && (this.userBMI <= 30)) {
             document.querySelector('.users_status').textContent = 'You are overweight.';
         }
-        else {
-            document.querySelector('.users_status').textContent = 'You are obese.';
+        else if (this.userBMI > 31) {
+            document.querySelector('.your_friends_status').textContent = `${this.you}'s obese.`;
+        }
+        else {    
         }
         return this.userBMI;
     },
@@ -53,8 +55,10 @@ const yourFriend = {
         else if ((this.companionsBMI >= 26) && (this.companionsBMI <= 30)) {
             document.querySelector('.your_friends_status').textContent = `${this.companionsName}'s overweight.`;
         }
+        else if (this.companionsBMI > 31) {
+        document.querySelector('.your_friends_status').textContent = `${this.companionsName}'s obese.`;
+        }
         else {
-            document.querySelector('.your_friends_status').textContent = `${this.companionsName}'s obese.`;
         }
         return this.companionsBMI;
     },
@@ -75,8 +79,11 @@ function results() {
         document.querySelector('.results').textContent = `You have the higher BMI of approximately ${Math.round(user.userBMI)}.`;
         document.querySelector('.results').style.color = '#890F0D';
     }
-    else {
+    else if (user.userBMI < yourFriend.companionsBMI) {
         document.querySelector('.results').textContent = `${yourFriend.companionsName} has a higher BMI of approximately ${Math.round(yourFriend.companionsBMI)}.`;
         document.querySelector('.results').style.color = '#BAFFB4';
+    }
+    else{
+        document.querySelector('.results').textContent = "You entered an invalid input above with your BMI data, your friend's BMI data, and/or your and your friend's BMI data.";
     }
 };
