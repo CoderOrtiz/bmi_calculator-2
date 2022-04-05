@@ -2,13 +2,13 @@
 const user = {
 
     // User's Name and BMI Information
-    you: prompt ("Whats your name?"),
-    yourMass: prompt ("Whats your weight in pounds?"),
-    yourHeight: prompt ("Whats your height in inches?"),
+    user: prompt ("Whats your name?"),
+    mass: prompt ("Whats your weight in pounds?"),
+    height: prompt ("Whats your height in inches?"),
 
     // When "calcUserBMI" is Called, User's BMI will be Calculated and be Advised if They Are at a Healthy Weight
     calcUserBMI: function () {
-        this.userBMI = (this.yourMass / (this.yourHeight ** 2)) * 703;
+        this.userBMI = (this.mass / (this.height ** 2)) * 703;
         this.userBMIRounded = Math.round(this.userBMI);
         //  This Information Gets Displayed under "user" Class
         document.querySelector('.user').textContent = `${this.userBMIRounded ? 'Your BMI is approximately ' + this.userBMIRounded + '.' : 'You entered an invalid input.'}`;
@@ -24,7 +24,7 @@ const user = {
             document.querySelector('.users_status').textContent = 'You are overweight.';
         }
         else if (this.userBMIRounded > 31) {
-            document.querySelector('.users_status').textContent = `${this.you}'s obese.`;
+            document.querySelector('.users_status').textContent = `${this.user}'s obese.`;
         }
         else {    
         }
@@ -36,29 +36,29 @@ const user = {
 const yourFriend = {
     
     // Friend's Name and BMI Information
-    companionsName: prompt ("Whats your friend's name?"),
-    companionsWeight: prompt ("Whats your friend's weight in pounds?"),
-    companionsHeight: prompt ("Whats your friend's height in inches?"),
+    user: prompt ("Whats your friend's name?"),
+    mass: prompt ("Whats your friend's weight in pounds?"),
+    height: prompt ("Whats your friend's height in inches?"),
 
      // When "calcFriendsBMI" is Called, Friend's BMI will be Calculated and be Advised if They Are at a Healthy Weight
     calcFriendsBMI: function () {
-        this.companionsBMI = (this.companionsWeight / (this.companionsHeight ** 2)) * 703;
+        this.companionsBMI = (this.mass / (this.height ** 2)) * 703;
         this.companionsBMIRounded = Math.round(this.companionsBMI);
-        document.querySelector('.your_friend').textContent = `${this.companionsBMI ? this.companionsName + "'s BMI is approximately " + this.companionsBMIRounded + "." : "You entered an invalid input."}`;
+        document.querySelector('.your_friend').textContent = `${this.companionsBMI ? this.user + "'s BMI is approximately " + this.companionsBMIRounded + "." : "You entered an invalid input."}`;
         
         //  This Information Gets Displayed under "your_friends_status" Class
         if (this.companionsBMIRounded <= 18) {
-            document.querySelector('.your_friends_status').textContent = `${this.companionsName}'s underweight.`;
+            document.querySelector('.your_friends_status').textContent = `${this.user}'s underweight.`;
         }
         else if ((this.companionsBMIRounded >= 19) && (this.companionsBMIRounded <= 25)) {
-            document.querySelector('.your_friends_status').textContent = `${this.companionsName}'s at a healthy weight.`;
+            document.querySelector('.your_friends_status').textContent = `${this.user}'s at a healthy weight.`;
         }
         else if ((this.companionsBMIRounded >= 26) && (this.companionsBMIRounded <= 30)) {
             console.log(this.companionsBMIRounded)
-            document.querySelector('.your_friends_status').textContent = `${this.companionsName}'s overweight.`;
+            document.querySelector('.your_friends_status').textContent = `${this.user}'s overweight.`;
         }
         else if (this.companionsBMIRounded > 31) {
-        document.querySelector('.your_friends_status').textContent = `${this.companionsName}'s obese.`;
+        document.querySelector('.your_friends_status').textContent = `${this.user}'s obese.`;
         }
         else {
         }
@@ -71,7 +71,7 @@ const yourFriend = {
 function results() {
 
     if ((user.userBMIRounded === undefined) || (yourFriend.companionsBMIRounded === undefined)) {
-        document.querySelector('.results').textContent = `You must first calculate your results, and then ${yourFriend.companionsName}'s results, to see the final results.`;
+        document.querySelector('.results').textContent = `You must first calculate your results, and then ${yourFriend.user}'s results, to see the final results.`;
     }
     else if (user.userBMIRounded === yourFriend.companionsBMIRounded) {
         document.querySelector('.results').textContent = `You both have a BMI of approximately ${user.userBMIRounded}.`;
@@ -82,7 +82,7 @@ function results() {
         document.querySelector('.results').style.color = '#890F0D';
     }
     else if (user.userBMIRounded < yourFriend.companionsBMIRounded) {
-        document.querySelector('.results').textContent = `${yourFriend.companionsName} has a higher BMI of approximately ${yourFriend.companionsBMIRounded}.`;
+        document.querySelector('.results').textContent = `${yourFriend.user} has a higher BMI of approximately ${yourFriend.companionsBMIRounded}.`;
         document.querySelector('.results').style.color = '#BAFFB4';
     }
     else{
