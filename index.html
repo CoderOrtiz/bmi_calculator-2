@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,27 @@
   <link rel="stylesheet" href="styles.css">
   <title>BMI Calculator</title>
 </head>
+
 <body>
-    <h1>BMI Calculator</h1>
-    <h3>Do you or your friend have a higher BMI?</h3>
-    <button onclick="user.calcUserBMI()">Calculate User's BMI</button>
-    <h6 class="the_man"></h6>
-    <h6 class="the_mans_status"></h6>
-    <button onclick="yourFriend.calcFriendsBMI()">Calculate Friend's BMI</button>
-    <h6 class="your_friend"></h6>
-    <h6 class="your_friends_status"></h6>
-    <button onclick="results()">Calculate Results</button>
-    <h6 class="results"></h6>
-    <script src="script.js"></script>
-  </body>
+  <!-- Welcoming Statements -->
+  <h1>BMI Calculator</h1>
+  <h3>Do you or your friend have a higher BMI?</h3>
+
+  <!-- User Button and Outputs -->
+  <button onclick="user.calcUserBMI()">Calculate User's BMI</button>
+  <h6 class="user"></h6>
+  <h6 class="users_status"></h6>
+
+  <!-- Friend's Button and Outputs -->
+  <button onclick="yourFriend.calcFriendsBMI()">Calculate Friend's BMI</button>
+  <h6 class="your_friend"></h6>
+  <h6 class="your_friends_status"></h6>
+
+  <!-- Results Button with an Output -->
+  <button onclick="results()">Calculate Results</button>
+  <h6 class="results"></h6>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
